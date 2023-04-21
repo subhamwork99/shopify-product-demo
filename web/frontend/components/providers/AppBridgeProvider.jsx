@@ -35,26 +35,23 @@ export function AppBridgeProvider({ children }) {
   // Using state in this way is preferable to useMemo.
   // See: https://stackoverflow.com/questions/60482318/version-of-usememo-for-caching-a-value-that-will-never-change
   const [appBridgeConfig] = useState(() => {
-    const host =
-      new URLSearchParams(location.search).get("host") ||
-      window.__SHOPIFY_DEV_HOST;
-
-    window.__SHOPIFY_DEV_HOST = host;
+    const host = "https://https://pierre-galaxy-arbitration-riverside.trycloudflare.com/admin/apps/demo-downtown-store"
 
     return {
       host,
-      apiKey: process.env.SHOPIFY_API_KEY,
+      apiKey: "7245d3de5e6f743bd44255e87783c5b4",
       forceRedirect: true,
     };
   });
 
-  if (!process.env.SHOPIFY_API_KEY || !appBridgeConfig.host) {
-    const bannerProps = !process.env.SHOPIFY_API_KEY
+  console.log("shopify","7245d3de5e6f743bd44255e87783c5b4")
+  if (!appBridgeConfig.host) {
+    const bannerProps = !"7245d3de5e6f743bd44255e87783c5b4"
       ? {
           title: "Missing Shopify API Key",
           children: (
             <>
-              Your app is running without the SHOPIFY_API_KEY environment
+              Your app is running without the 7245d3de5e6f743bd44255e87783c5b4 environment
               variable. Please ensure that it is set when running or building
               your React app.
             </>
